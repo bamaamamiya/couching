@@ -17,7 +17,7 @@ const Testimonials = () => {
     <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12">
-          Bukti Nyata Dari Murid Bama Dropship 📈
+          Bukti Nyata Dari Murid Lucrum Launch 📈
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
