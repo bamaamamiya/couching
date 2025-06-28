@@ -4,7 +4,8 @@ export default function Thanks() {
       <div className="text-center space-y-6 max-w-xl px-6">
         <h1 className="text-3xl font-bold">🎉 Terima kasih!</h1>
         <p className="text-gray-300">
-          Pembayaranmu sedang diproses. Kami akan hubungi kamu via WhatsApp dalam 1x24 jam.
+          Terima kasih! Pembayaranmu sedang diproses. Tim kami akan menghubungi
+          kamu melalui WhatsApp dan email dalam waktu maksimal 1x24 jam.
         </p>
 
         <div className="mt-6">
