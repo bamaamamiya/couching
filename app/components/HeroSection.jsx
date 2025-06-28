@@ -15,7 +15,7 @@ const HeroSection = () => {
           via Meta Ads — tanpa harus bingung mulai dari mana. Semua sudah
           dibimbing langkah demi langkah.
         </p>
-        <Link href="#pricing">
+        <Link href="#daftar">
           <span className="inline-block bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition cursor-pointer">
             Booking Sekarang
           </span>

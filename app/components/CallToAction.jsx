@@ -33,7 +33,7 @@ const FinalCTA = () => {
   };
 
   return (
-    <section className="bg-black text-white py-24 px-6 text-center">
+    <section className="bg-black text-white py-24 px-6 text-center" id="daftar">
       <div className="max-w-xl mx-auto space-y-8">
         <div>
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
