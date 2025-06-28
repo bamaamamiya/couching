@@ -7,7 +7,7 @@ import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import CallToAction from "./components/CallToAction";
 import WhoIsThisFor from "./components/WhoIsThisFor";
-import Navbar from "./components/Navbar";
+import BrandBar from "./components/BrandBar";
 
 export default function Home() {
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
       <main className="bg-black text-white">
-				<Navbar/>
+				<BrandBar/>
         <HeroSection />
 				<WhoIsThisFor/>
         <OfferBreakdown />

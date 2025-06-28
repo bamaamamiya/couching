@@ -57,14 +57,14 @@ const FinalCTA = () => {
             <input
               type="text"
               placeholder="Nama Lengkap"
-              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white outline-none"
               value={nama}
               onChange={(e) => setNama(e.target.value)}
             />
             <input
               type="text"
               placeholder="Nomor WhatsApp (08xxxx)"
-              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-indigo-500 outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white outline-none"
               value={wa}
               onChange={(e) => setWa(e.target.value)}
             />
