@@ -2,61 +2,61 @@
 
 import React from "react";
 import FadeUpWhenVisible from "./FadeUpWhenVisible";
+
 const OfferBreakdown = () => {
   const benefits = [
-    {
-      title: "3x Sesi Zoom 1-on-1",
-      value: "Rp1.500.000",
-    },
-    {
-      title: "Template & Skrip WhatsApp Proven",
-      value: "Rp500.000",
-    },
-    {
-      title: "Template Iklan Siap Pakai (Canva + Copy)",
-      value: "Rp750.000",
-    },
-    {
-      title: "Grup Support Eksklusif (Discord)",
-      value: "Tak ternilai",
-    },
+    { title: "1-on-1 coaching", value: "Rp5.000.000" },
+    { title: "SOP riset produk", value: "Rp1.000.000" },
+    { title: "Template video winning ads", value: "Rp1.500.000" },
+    { title: "Copywriting WA & landing page", value: "Rp2.000.000" },
+    { title: "Akses grup coaching selamanya", value: "Rp3.000.000" },
+    { title: "Garansi coaching sampai pecah telur", value: "Tak ternilai" },
   ];
 
   return (
-		<FadeUpWhenVisible>
+    <FadeUpWhenVisible>
+      <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
+        <div className="max-w-3xl mx-auto text-center bg-zinc-900 p-8 rounded-2xl border border-zinc-700 shadow-lg">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-10">
+            Apa yang Kamu Dapatkan di Program Ini?
+          </h2>
 
-    <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-10">
-          Apa yang Kamu Dapatkan di Program Ini?
-        </h2>
+          <div className="space-y-5 text-left text-sm sm:text-base">
+            {benefits.map((item, i) => (
+              <div
+                key={i}
+                className="flex justify-between border-b border-zinc-800 pb-4"
+              >
+                <span className="flex gap-2 items-center text-green-400">
+                  ✅ <span className="text-white">{item.title}</span>
+                </span>
+                <span className="font-semibold text-right text-white">
+                  {item.value}
+                </span>
+              </div>
+            ))}
+          </div>
 
-        <div className="space-y-6 text-left">
-          {benefits.map((item, i) => (
-            <div
-              key={i}
-              className="flex justify-between border-b border-gray-800 pb-4"
-            >
-              <span className="font-medium">✅ {item.title}</span>
-              <span className="font-semibold">{item.value}</span>
-            </div>
-          ))}
-        </div>
+          <div className="mt-10 text-lg sm:text-xl font-bold text-white">
+            Total Value:{" "}
+            <span className="line-through text-gray-400">
+              Rp12.500.000+
+            </span>
+          </div>
 
-        <div className="mt-10 text-xl sm:text-2xl font-bold">
-          Total Value: <span className="line-through">Rp2.750.000+</span>
-        </div>
-
-        <div className="mt-4">
-          <p className="text-lg text-gray-400 mb-1">Tapi kamu hanya investasi mulai dari:</p>
-          <p className="text-3xl sm:text-4xl font-extrabold text-indigo-400 tracking-wide">
+          <div className="mt-4 text-sm sm:text-base text-gray-400">
+            Harga spesial hari ini hanya
+          </div>
+          <div className="text-3xl sm:text-4xl font-extrabold text-white">
             Rp1.500.000
+          </div>
+
+          <p className="mt-2 text-xs sm:text-sm text-gray-500">
+            Harga naik 20% bulan depan. Slot tersisa 3 orang lagi.
           </p>
         </div>
-      </div>
-    </section>
-		</FadeUpWhenVisible>
-
+      </section>
+    </FadeUpWhenVisible>
   );
 };
 

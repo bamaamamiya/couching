@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google"; // ganti dari Inter ke Poppins
 import Footer from "./components/Footer";
+import { Julius_Sans_One } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,6 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 //   subsets: ["latin"],
 //   weight: ["400", "500", "600", "700"], // sesuaikan dengan kebutuhan
 // });
+const julius = Julius_Sans_One({
+  weight: "400", // hanya 400 tersedia
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Lucrum Launch",

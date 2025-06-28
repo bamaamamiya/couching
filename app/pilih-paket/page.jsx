@@ -78,9 +78,9 @@ export default function PilihPaket() {
           {Object.entries(products).map(([tier, item]) => (
             <div
               key={tier}
-              className="bg-zinc-900 border border-indigo-600 rounded-2xl p-6 shadow-lg hover:shadow-indigo-700 transition-all duration-300"
+              className="bg-zinc-900 border border-white rounded-2xl p-6 shadow-lg hover:shadow-white/30 transition-all duration-300"
             >
-              <h2 className="text-2xl font-bold text-indigo-400 mb-2 text-center">
+              <h2 className="text-2xl font-bold text-white mb-2 text-center">
                 {item.name}
               </h2>
               <p className="text-3xl font-extrabold text-white mb-4 text-center">
@@ -96,7 +96,7 @@ export default function PilihPaket() {
               </ul>
 
               <button
-                className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition duration-200"
+                className="w-full py-3 bg-white hover:bg-gray-200 text-black rounded-xl font-semibold transition duration-200"
                 onClick={() => handleCheckout(tier)}
               >
                 Checkout Sekarang

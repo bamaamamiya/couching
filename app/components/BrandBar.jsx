@@ -1,19 +1,32 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { Julius_Sans_One } from "next/font/google";
+
+const julius = Julius_Sans_One({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const BrandBar = () => {
   return (
-    <header className="bg-black text-white py-4">
-      <div className="flex items-center justify-center sm:justify-start max-w-6xl mx-auto px-4 gap-4">
-        <img
+    <header className="bg-black text-white py-2">
+      <div className="flex items-center max-w-6xl mx-auto px-4 gap-2 sm:gap-3">
+        {/* Logo Bulat */}
+        <Image
           src="/lucrum.png"
-          alt="Lucrum Launch Logo"
-          className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+          alt="Lucrum Logo"
+          width={42}
+          height={42}
+          className="object-contain"
         />
-        <p className="text-xl sm:text-2xl font-bold tracking-wider">
-          Lucrum Launch
-        </p>
+
+        {/* Teks Stacked */}
+        <div className={`${julius.className} leading-tight`}>
+          <p className="text-base sm:text-lg tracking-wide md:-mb-4">LUCRUM</p>
+          <p className="text-base sm:text-lg tracking-wide -mt-2">LAUNCH</p>
+        </div>
       </div>
     </header>
   );
