@@ -13,14 +13,8 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-6">
-          <Link href="#pricing" className="hover:underline">
-            Pricing
-          </Link>
           <Link href="#faq" className="hover:underline">
             FAQ
-          </Link>
-          <Link href="https://wa.me/6281234567890" target="_blank" className="hover:underline">
-            Kontak
           </Link>
         </div>
       </div>

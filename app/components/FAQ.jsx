@@ -10,8 +10,8 @@ const FAQ = () => {
       a: "Ya, program ini memang dirancang untuk kamu yang belum pernah jualan online atau belum pernah pasang iklan sama sekali.",
     },
     {
-      q: "Apa perbedaan paket 1,5jt dan 5jt?",
-      a: "Paket 1,5jt fokus ke pemula sampai closing pertama. Paket 5jt mencakup pendampingan lebih panjang sampai kamu belajar scale & retargeting.",
+      q: "Apa bedanya paket Rp.400.000 dan Rp.1.500.000?",
+      a: "Paket 400rb cocok untuk kamu yang baru mulai dan ingin pecah telur pertama. Kalau kamu ingin lanjut belajar scale, retargeting, dan butuh pendampingan lebih panjang, pilih paket 1,5jt.",
     },
     {
       q: "Apakah ini kelas video atau live?",

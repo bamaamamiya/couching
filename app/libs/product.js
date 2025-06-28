@@ -4,10 +4,14 @@ export const products = {
     name: "Pemula dari Nol",
     price: 400000,
     features: [
-      "Coaching 1-on-1 selama 14 hari",
-      "Riset produk & skrip iklan",
-      "Setup Meta Ads",
-      "Review & feedback harian",
+      "1-on-1 coaching selama 14 hari (Value: Rp5.000.000)",
+      "SOP riset produk terstruktur (Value: Rp1.000.000)",
+      "Template video winning ads siap pakai (Value: Rp1.500.000)",
+      "Prompt copywriting FB Ads (Value: Rp2.000.000)",
+      "Akses grup coaching selamanya (Value: Rp3.000.000)",
+      "Setup & optimasi Meta Ads",
+      "Review & feedback harian langsung dari mentor",
+      "Garansi coaching sampai pecah telur 🚀 (Tak ternilai)",
     ],
   },
   scale: {

@@ -17,7 +17,7 @@ const Testimonials = () => {
     <FadeUpWhenVisible>
       <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
             Bukti Nyata Dari Murid Lucrum Launch 📈
           </h2>
 
@@ -33,7 +33,7 @@ const Testimonials = () => {
                     alt={`Bukti dari ${item.name}`}
                     width={800}
                     height={500}
-                    className="rounded-lg object-contain w-full h-[300px] sm:h-[300px]"
+                    className="rounded-lg object-contain w-full h-[200px] sm:h-[300px]"
                   />
                 </div>
               </div>

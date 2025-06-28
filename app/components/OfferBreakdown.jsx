@@ -7,8 +7,8 @@ const OfferBreakdown = () => {
   const benefits = [
     { title: "1-on-1 coaching", value: "Rp5.000.000" },
     { title: "SOP riset produk", value: "Rp1.000.000" },
-    { title: "Template video winning ads", value: "Rp1.500.000" },
-    { title: "Copywriting WA & landing page", value: "Rp2.000.000" },
+    { title: "Mindset video winning ads", value: "Rp1.500.000" },
+    { title: "Copywriting Fb Ads Prompt", value: "Rp2.000.000" },
     { title: "Akses grup coaching selamanya", value: "Rp3.000.000" },
     { title: "Garansi coaching sampai pecah telur", value: "Tak ternilai" },
   ];
@@ -39,16 +39,14 @@ const OfferBreakdown = () => {
 
           <div className="mt-10 text-lg sm:text-xl font-bold text-white">
             Total Value:{" "}
-            <span className="line-through text-gray-400">
-              Rp12.500.000+
-            </span>
+            <span className="line-through text-gray-400">Rp12.500.000+</span>
           </div>
 
           <div className="mt-4 text-sm sm:text-base text-gray-400">
             Harga spesial hari ini hanya
           </div>
           <div className="text-3xl sm:text-4xl font-extrabold text-white">
-            Rp1.500.000
+            Rp400.000
           </div>
 
           <p className="mt-2 text-xs sm:text-sm text-gray-500">

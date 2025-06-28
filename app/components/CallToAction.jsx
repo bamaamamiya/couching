@@ -41,7 +41,7 @@ const FinalCTA = () => {
       >
         <div className="max-w-xl mx-auto space-y-8">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 leading-tight">
+            <h2 className="text-4xl sm:text-4xl font-extrabold mb-4 leading-tight">
               Siap Pecah Telur Pertamamu?
             </h2>
             <p className="text-gray-400 text-lg">
@@ -52,7 +52,7 @@ const FinalCTA = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="bg-zinc-900 rounded-2xl p-6 space-y-4 border border-zinc-700"
+            className="bg-zinc-900 rounded-2xl px-6 py-10 space-y-4 border border-zinc-700 w-full sm:w-3/4 md:w-[480px] lg:w-[500px] mx-auto"
           >
             <input
               type="text"

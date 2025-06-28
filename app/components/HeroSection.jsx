@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="bg-black text-white py-24 px-6 text-center">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-6">
-          Pecah Telur Pertamamu Dalam 14 Hari 🚀
+          Pecah Telur Pertamamu Dalam 7 Hari 🚀
         </h1>
         <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-8">
           Program coaching 1-on-1 untuk bantu kamu closing pertama dari dropship
