@@ -6,17 +6,16 @@ import Image from "next/image";
 const Testimonials = () => {
   const data = [
     {
-      name: "Yodi",
-      message:
-        "Testimoni langsung via chat: Super disiplin, detail, & hasil real!",
-      img: "/images/yodi-chat.png", // bukti dashboard / hasil coaching
+      img: "/images/yodi.png", // Bukti dashboard / hasil coaching
     },
-    
+    {
+      img: "/images/yhosua.png", // Bukti dashboard / hasil coaching
+    },
   ];
 
   return (
     <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-4xl font-bold text-center mb-12">
           Bukti Nyata Dari Murid Bama Dropship 📈
         </h2>
@@ -25,20 +24,16 @@ const Testimonials = () => {
           {data.map((item, i) => (
             <div
               key={i}
-              className="bg-zinc-900 p-6 rounded-xl shadow-lg border border-zinc-700 hover:shadow-2xl transition"
+              className="bg-zinc-900 p-4 rounded-xl shadow-lg border border-zinc-700 hover:shadow-2xl transition"
             >
-              <Image
-                src={item.img}
-                alt={`Bukti dari ${item.name}`}
-                width={1000}
-                height={600}
-                className="rounded-lg w-full h-auto mb-4"
-              />
-              <div className="space-y-2">
-                <p className="text-sm text-gray-300 italic">"{item.message}"</p>
-                <p className="mt-2 font-semibold text-white text-sm">
-                  – {item.name}
-                </p>
+              <div className="flex justify-center items-center">
+                <Image
+                  src={item.img}
+                  alt={`Bukti dari ${item.name}`}
+                  width={800}
+                  height={500}
+                  className="rounded-lg object-contain w-full h-[300px] sm:h-[300px]"
+                />
               </div>
             </div>
           ))}
