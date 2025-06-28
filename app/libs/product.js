@@ -6,7 +6,7 @@ export const products = {
     features: [
       "1-on-1 coaching selama 7 hari (Value: Rp5.000.000)",
       "SOP riset produk terstruktur (Value: Rp1.000.000)",
-      "Template video winning ads siap pakai (Value: Rp1.500.000)",
+      "Mindset & Struktur video winning ads (Value: Rp1.500.000)",
       "Prompt copywriting FB Ads (Value: Rp2.000.000)",
       "Akses grup coaching selamanya (Value: Rp3.000.000)",
       "Setup & optimasi Meta Ads",
