@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import FadeUpWhenVisible from "./FadeUpWhenVisible";
 
 const FAQ = () => {
   const faqs = [
@@ -23,26 +24,30 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-black text-white py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl sm:text-4xl font-bold text-center mb-10">
-          Pertanyaan yang Sering Ditanyakan 🤔
-        </h2>
-        <div className="space-y-6">
-          {faqs.map((item, i) => (
-            <div
-              key={i}
-              className="bg-zinc-900 border border-zinc-700 p-6 rounded-xl shadow"
-            >
-              <h3 className="font-semibold text-lg mb-2 text-white">
-                {item.q}
-              </h3>
-              <p className="text-gray-300 text-sm leading-relaxed">{item.a}</p>
-            </div>
-          ))}
+    <FadeUpWhenVisible>
+      <section className="bg-black text-white py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-10">
+            Pertanyaan yang Sering Ditanyakan 🤔
+          </h2>
+          <div className="space-y-6">
+            {faqs.map((item, i) => (
+              <div
+                key={i}
+                className="bg-zinc-900 border border-zinc-700 p-6 rounded-xl shadow"
+              >
+                <h3 className="font-semibold text-lg mb-2 text-white">
+                  {item.q}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </FadeUpWhenVisible>
   );
 };
 

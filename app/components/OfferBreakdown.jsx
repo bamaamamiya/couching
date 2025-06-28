@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import FadeUpWhenVisible from "./FadeUpWhenVisible";
 const OfferBreakdown = () => {
   const benefits = [
     {
@@ -23,11 +23,14 @@ const OfferBreakdown = () => {
   ];
 
   return (
+		<FadeUpWhenVisible>
+
     <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-4xl font-bold mb-10">
           Apa yang Kamu Dapatkan di Program Ini?
         </h2>
+
         <div className="space-y-6 text-left">
           {benefits.map((item, i) => (
             <div
@@ -39,14 +42,21 @@ const OfferBreakdown = () => {
             </div>
           ))}
         </div>
-        <div className="mt-10 text-xl font-bold">
+
+        <div className="mt-10 text-xl sm:text-2xl font-bold">
           Total Value: <span className="line-through">Rp2.750.000+</span>
         </div>
-        <div className="text-lg text-gray-400 mt-2">
-          Kamu hanya investasi mulai dari <span className="font-bold text-white">Rp1.500.000</span>
+
+        <div className="mt-4">
+          <p className="text-lg text-gray-400 mb-1">Tapi kamu hanya investasi mulai dari:</p>
+          <p className="text-3xl sm:text-4xl font-extrabold text-indigo-400 tracking-wide">
+            Rp1.500.000
+          </p>
         </div>
       </div>
     </section>
+		</FadeUpWhenVisible>
+
   );
 };
 

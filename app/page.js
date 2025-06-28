@@ -1,17 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import { product } from "./libs/product";
-import Checkout from "./components/Checkout1";
 import { useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import OfferBreakdown from "./components/OfferBreakdown";
-import Benefits from "./components/WhoIsThisFor";
 import Testimonials from "./components/Testimonials";
-import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
 import CallToAction from "./components/CallToAction";
 import WhoIsThisFor from "./components/WhoIsThisFor";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   useEffect(() => {
@@ -33,6 +29,7 @@ export default function Home() {
   return (
     <>
       <main className="bg-black text-white">
+				<Navbar/>
         <HeroSection />
 				<WhoIsThisFor/>
         <OfferBreakdown />
