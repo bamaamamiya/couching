@@ -28,11 +28,17 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/lucrum-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
+        <title>Lucrum Launch - Coaching Dropship Pecah Telur 7 Hari</title>
+        <meta
+          name="description"
+          content="Program coaching dropship 1-on-1, bantu kamu pecah telur dalam 7 hari lewat Meta Ads. Termasuk SOP riset produk, winning ads, retargeting, dan pendampingan langsung. Mulai dari Rp400.000 saja."
+        />
       </head>
-      <body className={inter.className}>{children}
+      <body className={inter.className}>
+        {children}
 
-			<Footer/>
-			</body>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTiktok,faDiscord } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10 px-6 border-t border-zinc-800">
@@ -13,9 +14,17 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-6">
-          <Link href="#faq" className="hover:underline">
-            FAQ
-          </Link>
+					<div className="flex justify-center gap-6 text-2xl mb-2">
+        <a href="https://www.instagram.com/lucrumlaunch/" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faInstagram} className="hover:text-gray-400 transition" />
+        </a>
+        <a href="https://tiktok.com/@lucrumlaunch" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faTiktok} className="hover:text-gray-400 transition" />
+        </a>
+        <a href="https://discord.gg/HGbCwWFkEk" target="_blank" rel="noopener noreferrer">
+          <FontAwesomeIcon icon={faDiscord} className="hover:text-gray-400 transition" />
+        </a>
+      </div>
         </div>
       </div>
     </footer>

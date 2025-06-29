@@ -10,6 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "firebase": "^11.9.1",
     "framer-motion": "^12.19.2",
     "midtrans-client": "^1.4.3",
