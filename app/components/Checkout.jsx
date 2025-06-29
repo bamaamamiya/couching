@@ -77,30 +77,30 @@ const Checkout = ({ tier = "basic", nama, wa }) => {
   return (
     <>
       <div className="fixed bottom-0 left-0 w-full bg-black border-t border-zinc-800 z-50 p-4">
-    <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
-      <button
-        className="w-full sm:w-auto rounded bg-white text-black px-6 py-3 text-sm font-semibold transition hover:bg-gray-200"
-        onClick={checkout}
-      >
-        Checkout Sekarang
-      </button>
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+          <button
+            className="w-full  sm:w-auto rounded bg-white text-black px-6 py-3 text-sm font-semibold transition hover:bg-gray-200"
+            onClick={checkout}
+          >
+            Checkout Sekarang
+          </button>
 
-      <button
-        className="w-full sm:w-auto text-white underline text-sm hover:opacity-80 transition"
-        onClick={generatePaymentLink}
-      >
-        Buat Link Pembayaran
-      </button>
-    </div>
+          <button
+            className="w-full sm:w-auto text-white underline text-sm hover:opacity-80 transition"
+            onClick={generatePaymentLink}
+          >
+            Buat Link Pembayaran
+          </button>
+        </div>
 
-    {paymentUrl && (
-      <div className="text-white underline italic mt-4 text-center">
-        <Link href={paymentUrl} target="_blank">
-          {paymentUrl}
-        </Link>
+        {paymentUrl && (
+          <div className="text-white underline italic mt-4 text-center">
+            <Link href={paymentUrl} target="_blank">
+              {paymentUrl}
+            </Link>
+          </div>
+        )}
       </div>
-    )}
-  </div>
     </>
   );
 };

@@ -18,7 +18,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/lucrumlaunch/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} className="hover:text-gray-400 transition" />
         </a>
-        <a href="https://tiktok.com/@lucrumlaunch" target="_blank" rel="noopener noreferrer">
+        <a href="/"  rel="noopener noreferrer">
           <FontAwesomeIcon icon={faTiktok} className="hover:text-gray-400 transition" />
         </a>
         <a href="https://discord.gg/HGbCwWFkEk" target="_blank" rel="noopener noreferrer">

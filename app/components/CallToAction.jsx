@@ -3,7 +3,15 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { db } from "../libs/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  serverTimestamp,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+
 import FadeUpWhenVisible from "./FadeUpWhenVisible";
 
 const FinalCTA = () => {
@@ -26,11 +34,36 @@ const FinalCTA = () => {
     e.preventDefault();
     if (!nama || !wa || !email) return alert("Semua data wajib diisi.");
 
-    if (!validateWA(wa)) return alert("Nomor WA tidak valid. Awali dengan +62, 62, atau 08");
+    if (!validateWA(wa))
+      return alert("Nomor WA tidak valid. Awali dengan +62, 62, atau 08");
     if (!validateEmail(email)) return alert("Format email tidak valid");
 
     // 🔁 Format WA: 08 / +62 jadi 62
     let formattedWA = wa.replace(/\s+/g, "").replace(/^(\+62|0)/, "62");
+
+    // 1. Cek berapa yang sudah mendaftar bulan ini
+    const now = new Date();
+    const awalBulan = new Date(now.getFullYear(), now.getMonth(), 1);
+
+    const q = query(
+      collection(db, "leads"),
+      where("createdAt", ">=", awalBulan)
+    );
+    const snapshot = await getDocs(q);
+
+    if (snapshot.size >= 3) {
+      alert("Slot bulan ini sudah penuh. Kamu masuk waiting list ya.");
+
+      await addDoc(collection(db, "waitinglist"), {
+        nama,
+        wa: formattedWA,
+        email,
+        createdAt: serverTimestamp(),
+      });
+
+      router.push("/waiting-list"); // arahkan ke halaman khusus waiting
+      return;
+    }
 
     setLoading(true);
     try {
@@ -52,7 +85,10 @@ const FinalCTA = () => {
 
   return (
     <FadeUpWhenVisible>
-      <section className="bg-black text-white py-24 px-6 text-center" id="daftar">
+      <section
+        className="bg-black text-white py-24 px-6 text-center"
+        id="daftar"
+      >
         <div className="max-w-xl mx-auto space-y-8">
           <div>
             <h2 className="text-4xl sm:text-4xl font-extrabold mb-4 leading-tight">
