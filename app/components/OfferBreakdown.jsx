@@ -8,7 +8,7 @@ const OfferBreakdown = () => {
     { title: "1-on-1 coaching", value: "Rp5.000.000" },
     { title: "SOP riset produk", value: "Rp1.000.000" },
     { title: "Mindset video winning ads", value: "Rp1.500.000" },
-    { title: "Copywriting Fb Ads Prompt", value: "Rp2.000.000" },
+    { title: "Copy Ads Prompt FB", value: "Rp2.000.000" },
     { title: "Akses grup coaching selamanya", value: "Rp3.000.000" },
     { title: "Garansi coaching sampai pecah telur", value: "Tak ternilai" },
   ];
@@ -25,7 +25,7 @@ const OfferBreakdown = () => {
             {benefits.map((item, i) => (
               <div
                 key={i}
-                className="flex justify-between border-b border-zinc-800 pb-4"
+                className="flex justify-between border-b border-zinc-800 pb-4 p-2"
               >
                 <span className="flex gap-2 items-center text-green-400">
                   ✅ <span className="text-white">{item.title}</span>

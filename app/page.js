@@ -32,8 +32,8 @@ export default function Home() {
 				<BrandBar/>
         <HeroSection />
 				<WhoIsThisFor/>
-        <OfferBreakdown />
         <Testimonials />
+        <OfferBreakdown />
         <CallToAction />
         <FAQ />
       </main>
