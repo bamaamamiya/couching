@@ -65,17 +65,28 @@ export default function LeadMagnetForm() {
       <div className="bg-black text-white min-h-screen px-6 py-20 flex items-center justify-center">
         <div className="max-w-2xl w-full space-y-8">
           {submitted ? (
-            <div className="bg-green-800 text-white p-6 rounded-xl text-center space-y-4">
-              <h2 className="text-3xl font-bold">✅ Pendaftaran Berhasil</h2>
-              <p>
-                Kamu sudah terdaftar! Tim Lucrum Launch akan memilih 1 peserta
-                dalam 1x24 jam. Jika kamu terpilih, kami akan hubungi kamu via
-                WhatsApp.
+            <div className="bg-zinc-900 border border-zinc-700 text-white p-6 rounded-xl text-center space-y-4 shadow-xl">
+              <h2 className="text-3xl font-bold text-white">
+                ✅ Kamu Berhasil Daftar
+              </h2>
+              <p className="text-gray-300">
+                Nama kamu udah masuk daftar! 1 peserta bakal dipilih dalam 1x24
+                jam buat dapet akses coaching langsung.
               </p>
-              <p className="text-sm text-gray-200">
-                Sementara itu, pantau terus konten terbaru kami untuk belajar
-                lebih lanjut.
+              <p className="text-sm text-zinc-400">
+                Tim Lucrum Launch akan hubungi kamu via WhatsApp kalau kamu
+                terpilih. Sambil nunggu, pantau terus konten terbaru di IG &
+                Discord 💬
               </p>
+
+							<a
+          href="https://discord.gg/HGbCwWFkEk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-black font-semibold px-5 py-3 rounded-xl hover:bg-gray-200 transition mt-4"
+        >
+          🚀 Join Komunitas Discord
+        </a>
             </div>
           ) : (
             <>
@@ -87,6 +98,22 @@ export default function LeadMagnetForm() {
                 dan perjalanannya akan gue dokumentasiin buat bukti program
                 Lucrum Launch 💥
               </p>
+
+              <div className="bg-zinc-800 border border-zinc-700 text-sm text-gray-300 rounded-xl p-4 mt-4">
+                <p className="mb-1 font-semibold text-white">Syarat Minimal:</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>
+                    Akun Facebook aktif dengan minimal{" "}
+                    <strong>100 teman</strong>
+                  </li>
+                  <li>
+                    Akun sudah berumur lebih dari <strong>6 bulan</strong>
+                  </li>
+                  <li>
+                    Berusia antara <strong>17–40 tahun</strong>
+                  </li>
+                </ul>
+              </div>
 
               <form
                 onSubmit={handleSubmit}
