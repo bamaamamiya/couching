@@ -59,7 +59,7 @@ export default function PilihPaket() {
   };
 
   return (
-    <section className="bg-black text-white min-h-screen px-4 py-20">
+    <section className="bg-black text-white min-h-screen px-6 py-24">
       {/* Midtrans Snap Script */}
       <Script
         src="https://app.sandbox.midtrans.com/snap/snap.js"
@@ -68,26 +68,26 @@ export default function PilihPaket() {
       />
 
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-4xl font-bold mb-6 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 leading-tight tracking-tight">
           Halo {nama || "teman"} 👋
           <br />
-          Pilih paket coaching kamu:
+          Pilih Paket Coaching Kamu
         </h1>
 
-        <div className="grid sm:grid-cols-2 gap-6 mt-10">
+        <div className="grid sm:grid-cols-2 gap-8">
           {Object.entries(products).map(([tier, item]) => (
             <div
               key={tier}
-              className="bg-zinc-900 border border-white rounded-2xl p-6 shadow-lg hover:shadow-white/30 transition-all duration-300"
+              className="bg-zinc-900/80 border border-zinc-700 rounded-2xl shadow-md p-6 sm:p-8 hover:shadow-zinc-500/10 transition-all duration-300"
             >
-              <h2 className="text-2xl font-bold text-white mb-2 text-center">
-                {item.name}
-              </h2>
-              <p className="text-3xl font-extrabold text-white mb-4 text-center">
-                Rp {new Intl.NumberFormat("id-ID").format(item.price)}
-              </p>
+              <div className="text-center space-y-3">
+                <h2 className="text-xl font-bold text-white">{item.name}</h2>
+                <p className="text-2xl font-extrabold text-white">
+                  Rp {new Intl.NumberFormat("id-ID").format(item.price)}
+                </p>
+              </div>
 
-              <ul className="text-sm text-gray-300 mb-6 space-y-2">
+              <ul className="mt-6 text-sm text-gray-300 space-y-2 leading-relaxed">
                 {item.features?.map((f, i) => (
                   <li key={i} className="flex items-start gap-2">
                     ✅ <span>{f}</span>
@@ -96,8 +96,8 @@ export default function PilihPaket() {
               </ul>
 
               <button
-                className="w-full py-3 bg-white hover:bg-gray-200 text-black rounded-xl font-semibold transition duration-200"
                 onClick={() => handleCheckout(tier)}
+                className="mt-6 w-full py-3 rounded-xl font-semibold text-sm sm:text-base bg-white text-black hover:bg-gray-200 transition"
               >
                 Checkout Sekarang
               </button>

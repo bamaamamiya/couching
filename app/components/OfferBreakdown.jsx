@@ -15,43 +15,48 @@ const OfferBreakdown = () => {
 
   return (
     <FadeUpWhenVisible>
-      <section className="bg-black text-white py-20 px-6 sm:px-10 md:px-20">
-        <div className="max-w-3xl mx-auto text-center bg-zinc-900 p-8 rounded-2xl border border-zinc-700 shadow-lg">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-10">
-            Apa yang Kamu Dapatkan di Program Ini?
+      <section className="bg-black text-white py-24 px-6 sm:px-10 md:px-20">
+        <div className="max-w-3xl mx-auto rounded-2xl border border-zinc-800 bg-zinc-900/60 shadow-2xl p-10 backdrop-blur">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-center mb-12">
+            Apa yang Kamu Dapatkan?
           </h2>
 
-          <div className="space-y-5 text-left text-sm sm:text-base">
+          <div className="space-y-5 text-sm sm:text-base">
             {benefits.map((item, i) => (
               <div
                 key={i}
-                className="flex justify-between border-b border-zinc-800 pb-4 p-2"
+                className="flex justify-between items-center border-b border-zinc-800 pb-4"
               >
-                <span className="flex gap-2 items-center text-green-400">
-                  ✅ <span className="text-white">{item.title}</span>
-                </span>
-                <span className="font-semibold text-right text-white">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span>{item.title}</span>
+                </div>
+                <span className="font-medium text-right text-gray-200">
                   {item.value}
                 </span>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 text-lg sm:text-xl font-bold text-white">
-            Total Value:{" "}
-            <span className="line-through text-gray-400">Rp12.500.000+</span>
-          </div>
+          <div className="mt-12 text-center">
+            <div className="text-base sm:text-lg text-gray-400 mb-2">
+              Total Value:
+            </div>
+            <div className="text-2xl sm:text-3xl font-bold line-through text-gray-500">
+              Rp12.500.000+
+            </div>
 
-          <div className="mt-4 text-sm sm:text-base text-gray-400">
-            Harga spesial hari ini hanya
-          </div>
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
-            Rp400.000
-          </div>
+            <div className="mt-6 text-gray-400 text-sm sm:text-base">
+              Harga Spesial Hari Ini
+            </div>
+            <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+              Rp400.000
+            </div>
 
-          <p className="mt-2 text-xs sm:text-sm text-gray-500">
-            Harga naik 20% bulan depan. Slot tersisa 3 orang lagi.
-          </p>
+            <p className="mt-4 text-sm text-gray-500">
+              Harga akan naik 20% bulan depan. Tersisa <span className="text-white font-semibold">3 slot</span> lagi.
+            </p>
+          </div>
         </div>
       </section>
     </FadeUpWhenVisible>

@@ -3,9 +3,8 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google"; // ganti dari Inter ke Poppins
 import Footer from "./components/Footer";
 import { Julius_Sans_One } from "next/font/google";
-
 const inter = Inter({ subsets: ["latin"] });
-
+import BrandBar from "./components/BrandBar";
 // const poppins = Poppins({
 //   subsets: ["latin"],
 //   weight: ["400", "500", "600", "700"], // sesuaikan dengan kebutuhan
@@ -35,6 +34,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
+				<BrandBar/>
         {children}
 
         <Footer />

@@ -112,6 +112,9 @@ export default function LeadMagnetForm() {
                   <li>
                     Berusia antara <strong>17–40 tahun</strong>
                   </li>
+                  <li>
+                    Punya <strong>Internet , HP & Laptop</strong>
+                  </li>
                 </ul>
               </div>
 

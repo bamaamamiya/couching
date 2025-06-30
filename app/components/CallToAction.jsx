@@ -89,39 +89,42 @@ const FinalCTA = () => {
         className="bg-black text-white py-24 px-6 text-center"
         id="daftar"
       >
-        <div className="max-w-xl mx-auto space-y-8">
-          <div>
-            <h2 className="text-4xl sm:text-4xl font-extrabold mb-4 leading-tight">
+        <div className="max-w-xl mx-auto space-y-10">
+          {/* Headline */}
+          <div className="space-y-4">
+            <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight">
               Siap Pecah Telur Pertamamu?
             </h2>
-            <p className="text-gray-400 text-lg">
-              🚨 Slot 3 orang lagi. Harga naik 20% bulan depan. Ambil langkah
-              sekarang — sebelum "nanti" jadi terlambat.
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+              🚨 Sisa 3 slot lagi. Harga naik 20% bulan depan.
+              <br className="hidden sm:block" />
+              Ambil langkah sekarang — sebelum “nanti” jadi terlambat.
             </p>
           </div>
 
+          {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-zinc-900 rounded-2xl px-6 py-10 space-y-4 border border-zinc-700 w-full sm:w-3/4 md:w-[480px] lg:w-[500px] mx-auto"
+            className="bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-10 space-y-5 w-full sm:w-4/5 md:w-[480px] lg:w-[500px] mx-auto"
           >
             <input
               type="text"
               placeholder="Nama Lengkap"
-              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white/80 outline-none text-sm sm:text-base"
               value={nama}
               onChange={(e) => setNama(e.target.value)}
             />
             <input
               type="text"
               placeholder="Nomor WhatsApp"
-              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white/80 outline-none text-sm sm:text-base"
               value={wa}
               onChange={(e) => setWa(e.target.value)}
             />
             <input
               type="email"
               placeholder="Alamat Email Aktif"
-              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white outline-none"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white/80 outline-none text-sm sm:text-base"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -129,10 +132,10 @@ const FinalCTA = () => {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-3 rounded-xl font-semibold transition ${
+              className={`w-full py-3 rounded-xl font-semibold transition text-sm sm:text-base ${
                 loading
-                  ? "bg-zinc-600 cursor-not-allowed text-gray-300"
-                  : "bg-black hover:bg-black/70 text-white"
+                  ? "bg-zinc-700 cursor-not-allowed text-gray-300"
+                  : "bg-white text-black hover:bg-gray-200"
               }`}
             >
               {loading ? "Memproses..." : "Booking Sekarang 🔥"}
