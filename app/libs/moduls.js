@@ -8,17 +8,17 @@ export const moduls = [
     videoId: "yaZzc3PBUM4", // Ganti kalau perlu
 
     takeaway: [
-    "Kenapa kebanyakan dropshipper gagal meskipun ikut banyak kelas?",
-    "Cara mikir pebisnis: bukan cari barang, tapi cari problem & solusi",
-    "Framework riset produk yang repeatable dan bisa kamu ajarkan ke tim",
-    "Gunakan formula P.A.R.T.S untuk nilai produk: Pain, Audience, Result, Trend, Simplicity",
-    "P.A.R.T.S bantu kamu hindari produk gimmick dan fokus ke produk yang menyelesaikan masalah nyata",
-    "Checklist praktis: pastikan produk kamu punya pain yang kuat, audiens jelas, hasil nyata, sedang tren, dan gampang dijelaskan",
-    "Gunakan skor P.A.R.T.S untuk bantu ambil keputusan:",
-    "✅ 5/5: Produk Emas 🔥 → langsung scale dan iklanin",
-    "✅ 4/5: Produk Layak Uji 🧪 → masih bisa dioptimalkan",
-    "❌ 3/5 atau kurang: Produk Lemah 🚫 → hindari, terlalu banyak red flag",
-  ],
+      "Kenapa kebanyakan dropshipper gagal meskipun ikut banyak kelas?",
+      "Cara mikir pebisnis: bukan cari barang, tapi cari problem & solusi",
+      "Framework riset produk yang repeatable dan bisa kamu ajarkan ke tim",
+      "Gunakan formula P.A.R.T.S untuk nilai produk: Pain, Audience, Result, Trend, Simplicity",
+      "P.A.R.T.S bantu kamu hindari produk gimmick dan fokus ke produk yang menyelesaikan masalah nyata",
+      "Checklist praktis: pastikan produk kamu punya pain yang kuat, audiens jelas, hasil nyata, sedang tren, dan gampang dijelaskan",
+      "Gunakan skor P.A.R.T.S untuk bantu ambil keputusan:",
+      "✅ 5/5: Produk Emas 🔥 → langsung iklanin",
+      "✅ 4/5: Produk Layak Uji 🧪 → masih bisa layak buat diiklankan",
+      "❌ 3/5 atau kurang: Produk Lemah 🚫 → hindari, terlalu banyak red flag",
+    ],
   },
 
   // {
