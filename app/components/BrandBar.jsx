@@ -76,7 +76,7 @@ const BrandBar = () => {
               <div className="absolute right-0 mt-2 bg-zinc-900 border border-zinc-700 rounded-xl shadow-lg w-40 z-50">
                 <button
                   onClick={handleLogout}
-                  className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-zinc-800 transition"
+                  className="block w-full text-left px-4 py-2 text-sm text-white hover:bg-zinc-800 transition hover:rounded-xl"
                 >
                   Logout
                 </button>

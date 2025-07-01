@@ -21,18 +21,18 @@ export const moduls = [
     ],
   },
 
-  // {
-  //   id: "flow-wa",
-  //   title: "Flow WhatsApp Closing",
-  //   icon: "💬",
-  //   description:
-  //     "Panduan step-by-step alur WhatsApp dari orang tanya sampai deal. Supaya kamu bisa closing lebih konsisten dan enggak panik tiap ada chat masuk.",
-  //   videoId: "ttXjGQZfcYI", // Ganti ke video real
+  {
+    id: "flow-wa",
+    title: "Flow WhatsApp Closing Dan Aturan",
+    icon: "💬",
+    description:
+      "Panduan step-by-step alur WhatsApp dari orang tanya sampai deal. Supaya kamu bisa closing lebih konsisten dan enggak panik tiap ada chat masuk.",
+    videoId: "5EID2hxU_Ps", // Ganti ke video real
 
-  //   takeaway: [
-  //     "Kenapa banyak calon buyer nggak jadi beli walau sudah nanya?",
-  //     "Formula simple untuk jawab chat yang nyambung dan closing",
-  //     "Template flow WA dari sapaan sampai penutup, tinggal pakai",
-  //   ],
-  // },
+    takeaway: [
+      "Kenapa banyak calon buyer nggak jadi beli walau sudah nanya?",
+      "Formula simple untuk jawab chat yang nyambung dan closing",
+      "Template flow WA dari sapaan sampai penutup, tinggal pakai",
+    ],
+  },
 ];
