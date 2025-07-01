@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useParams, notFound } from "next/navigation";
 import { moduls } from "../../libs/moduls";
 import BackButton from "../../components/BackButton";
+import Link from "next/link";
 
 export default function ModulDetail() {
   const { id } = useParams();
