@@ -83,12 +83,13 @@ const BrandBar = () => {
               </div>
             )}
           </div>
-        ) : (
+        ) 
+				: (
           <Link
             href="/free"
             className="inline-block bg-white text-black px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-gray-100 transition-all duration-200"
           >
-            Ambil Coaching Gratis 🚀
+            Coaching Gratis
           </Link>
         )}
       </div>
