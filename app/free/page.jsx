@@ -103,7 +103,7 @@ export default function LeadMagnetForm() {
                 <p className="mb-1 font-semibold text-white">Syarat Minimal:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>
-                    Akun Facebook aktif dengan minimal{" "}
+                    Akun FB aktif dengan minimal{" "}
                     <strong>100 teman</strong>
                   </li>
                   <li>
