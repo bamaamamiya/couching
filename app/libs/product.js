@@ -2,7 +2,7 @@ export const products = {
   basic: {
     id: "paket-basic",
     name: "Pemula dari Nol",
-    price: 400000,
+    price: 500000,
     features: [
       "1-on-1 coaching selama 7 hari",
       "SOP riset produk terstruktur",

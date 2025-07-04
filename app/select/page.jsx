@@ -1,18 +1,29 @@
 "use client";
-
+// select/page.jsx
 import React, { useEffect, useState } from "react";
-import { db } from "../libs/firebase";
-import {
-  collection,
-  updateDoc,
-  doc,
-  onSnapshot,
-  query,
-  orderBy,
-  deleteDoc,
-} from "firebase/firestore";
+import { useRouter } from "next/navigation";
+
+import { supabase } from "../libs/supabase";
 
 export default function DashboardReviewer() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+
+      if (!session?.user) {
+        router.replace("/admin"); // kalau belum login, balikin ke login
+      } else {
+        console.log("🚀 Masuk ke halaman SELECT");
+      }
+    };
+
+    checkSession();
+  }, []);
+
   const [leads, setLeads] = useState([]);
   // Tambahkan di atas komponen utama
   const getReasonLength = (alasan) => (alasan ? alasan.length : 0);
@@ -34,27 +45,53 @@ export default function DashboardReviewer() {
       (lengthFilter === "short" && reasonLength <= 80) ||
       (lengthFilter === "long" && reasonLength > 80);
 
-    return matchStatus && matchLength;
+    return matchStatus && matchLength && matchUmur;
   });
 
   useEffect(() => {
-    const q = query(collection(db, "leadmagnet"), orderBy("createdAt", "desc"));
-    const unsub = onSnapshot(q, (snapshot) => {
-      const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  const fetchData = async () => {
+    const { data: sessionData } = await supabase.auth.getSession();
+
+    if (!sessionData.session) {
+      console.warn("❌ No session found");
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from("leadmagnet")
+      .select("*")
+      .order("id", { ascending: false });
+
+    if (error) {
+      console.error("Error fetching leads:", error);
+    } else {
+      console.log("Fetched leads:", data);
       setLeads(data);
-    });
-    return () => unsub();
-  }, []);
+    }
+  };
+
+  fetchData();
+}, []);
+
 
   const updateStatus = async (id, status) => {
-    const docRef = doc(db, "leadmagnet", id);
-    await updateDoc(docRef, { status });
+    const { error } = await supabase
+      .from("leadmagnet")
+      .update({ status })
+      .eq("id", id);
+
+    if (error) {
+      console.error("Error updating status:", error);
+    }
   };
 
   const deleteLead = async (id) => {
-    const docRef = doc(db, "leadmagnet", id);
     if (confirm("Yakin mau hapus data ini?")) {
-      await deleteDoc(docRef);
+      const { error } = await supabase.from("leadmagnet").delete().eq("id", id);
+
+      if (error) {
+        console.error("Error deleting lead:", error);
+      }
     }
   };
 

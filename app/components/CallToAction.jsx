@@ -96,9 +96,9 @@ const FinalCTA = () => {
               Siap Pecah Telur Pertamamu?
             </h2>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-              🚨 Sisa 3 slot lagi. Harga naik 20% bulan depan.
+              🚨 Sisa 3 slot lagi. Harga akan naik jadi Rp600.000 bulan depan.
               <br className="hidden sm:block" />
-              Ambil langkah sekarang — sebelum “nanti” jadi terlambat.
+              Ambil slotmu sekarang — sebelum semua batch penuh.
             </p>
           </div>
 

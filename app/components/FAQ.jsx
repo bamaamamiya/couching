@@ -6,20 +6,24 @@ import FadeUpWhenVisible from "./FadeUpWhenVisible";
 const FAQ = () => {
   const faqs = [
     {
-      q: "Apakah program ini cocok untuk pemula absolut?",
-      a: "Ya, program ini dirancang khusus untuk kamu yang belum pernah jualan online atau belum pernah pasang iklan sama sekali.",
+      q: "Apakah program ini cocok untuk pemula?",
+      a: "Banget. Bahkan kamu nggak perlu pusing mikirin produk dan iklan. Saya akan bantu carikan produk yang terbukti laku, buatin ads copy-nya, dan bimbing kamu langsung jalankan semuanya sampai pecah telur.",
     },
     {
-      q: "Apa bedanya paket Rp400.000 dan Rp1.500.000?",
-      a: "Paket Rp400.000 cocok untuk kamu yang ingin pecah telur pertama. Sedangkan paket Rp1.500.000 memberikan pendampingan lanjutan seperti scale, retargeting, dan strategi lanjutan.",
+      q: "Saya dibantu sampai sejauh apa?",
+      a: "Program ini bukan sekadar ngajarin teori. Kamu akan langsung dibantu cari produk, disiapkan iklan, dibuatkan copy-nya, dan didampingi terus sampai benar-benar ada order masuk. Bisa dibilang, kamu saya carry untuk pecah telur pertama.",
     },
     {
       q: "Apakah ini kelas video atau live?",
-      a: "Bukan kelas video. Ini adalah coaching 1-on-1 langsung, lewat Discord & sesi evaluasi mingguan agar progresmu dipantau langsung.",
+      a: "Bukan kelas video. Ini sesi 1-on-1 langsung via Discord, jadi kamu bisa tanya apapun dan dijelaskan sampai paham. Beneran didampingi, bukan ditinggal nonton.",
     },
     {
-      q: "Bagaimana kalau saya belum punya produk?",
-      a: "Tenang, kamu akan dibimbing step-by-step cara riset dan memilih produk yang cocok — bahkan dari nol.",
+      q: "Apakah hasilnya dijamin?",
+      a: "Ya. Selama kamu benar-benar ikut step by step, hasil pecah telur itu saya jamin. Karena semua materi, eksekusi, dan strategi akan disesuaikan langsung untuk kamu.",
+    },
+    {
+      q: "Apa bedanya paket Rp500.000 dan Rp1.500.000?",
+      a: "Paket Rp500.000 fokus pecah telur: produk saya pilihkan, ads copy saya bantu buatkan, dan saya dampingi pasang iklannya. Paket Rp1.500.000 cocok untuk kamu yang sudah closing dan ingin lanjut scale lewat landing page & optimasi lanjutan.",
     },
   ];
 

@@ -3,31 +3,54 @@
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { auth } from "../libs/firebase"; // pastikan path sesuai
-import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { auth } from "../libs/firebase";
+import { signOut as firebaseSignOut } from "firebase/auth";
+import { supabase } from "../libs/supabase"; // pakai createBrowserSupabaseClient()
 
 const BrandBar = () => {
   const [username, setUsername] = useState("");
+  const [provider, setProvider] = useState(""); // 'firebase' | 'supabase'
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
   const router = useRouter();
 
-  // Ambil user login
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    // Firebase check
+    const unsubscribeFirebase = auth.onAuthStateChanged((user) => {
       if (user) {
         const name = user.displayName || user.email?.split("@")[0];
         setUsername(name);
-      } else {
-        setUsername("");
+        setProvider("firebase");
       }
     });
 
-    return () => unsubscribe();
+    // Supabase check
+    const checkSupabase = async () => {
+      const { data } = await supabase.auth.getSession();
+      const user = data.session?.user;
+      if (user) {
+        const name = user.email?.split("@")[0];
+        setUsername(name);
+        setProvider("supabase");
+      }
+    };
+
+    checkSupabase();
+
+    return () => unsubscribeFirebase();
   }, []);
 
-  // Tutup menu kalau klik di luar
+  const handleLogout = async () => {
+    if (provider === "firebase") {
+      await firebaseSignOut(auth);
+    } else if (provider === "supabase") {
+      await supabase.auth.signOut();
+    }
+    setUsername("");
+    router.push("/");
+  };
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -38,16 +61,9 @@ const BrandBar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Logout
-  const handleLogout = async () => {
-    await signOut(auth);
-    router.push("/");
-  };
-
   return (
     <header className="bg-black text-white py-3 border-b border-zinc-800 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo + Nama Brand */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/lucrum.png"
@@ -62,7 +78,6 @@ const BrandBar = () => {
           </div>
         </Link>
 
-        {/* Kanan: Username atau CTA */}
         {username ? (
           <div className="relative" ref={menuRef}>
             <button
@@ -83,8 +98,7 @@ const BrandBar = () => {
               </div>
             )}
           </div>
-        ) 
-				: (
+        ) : (
           <Link
             href="/free"
             className="inline-block bg-white text-black px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-gray-100 transition-all duration-200"

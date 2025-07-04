@@ -1,9 +1,9 @@
 "use client";
+// free/page.jsx
 
 import React, { useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../libs/firebase"; // pastikan path-nya sesuai strukturmu
 import FadeUpWhenVisible from "../components/FadeUpWhenVisible";
+import { supabase } from "../libs/supabase";
 
 export default function LeadMagnetForm() {
   const [form, setForm] = useState({
@@ -12,6 +12,7 @@ export default function LeadMagnetForm() {
     wa: "",
     alasan: "",
     umur: "",
+    created_at: new Date().toISOString(),
   });
 
   const [loading, setLoading] = useState(false);
@@ -26,6 +27,9 @@ export default function LeadMagnetForm() {
   };
 
   const handleSubmit = async (e) => {
+    const { nama, email, wa, alasan, umur: umurRaw } = form;
+    const umur = parseInt(umurRaw);
+
     e.preventDefault();
     if (!form.nama || !form.email || !form.wa || !form.alasan) {
       alert("Lengkapi semua field ya.");
@@ -39,7 +43,6 @@ export default function LeadMagnetForm() {
       return;
     }
 
-    const umur = parseInt(form.umur);
     if (!umur || umur < 17 || umur > 40) {
       alert("Isi umur kamu dengan benar (17–40 tahun)");
       return;
@@ -47,10 +50,16 @@ export default function LeadMagnetForm() {
 
     setLoading(true);
     try {
-      await addDoc(collection(db, "leadmagnet"), {
-        ...form,
-        createdAt: serverTimestamp(),
-      });
+      const { error } = await supabase
+        .from("leadmagnet")
+        .insert([{ nama, email, wa, alasan, umur }]);
+
+      if (error) {
+        console.error("Supabase insert error:", error);
+        alert("Gagal daftar. Coba lagi nanti.");
+        return;
+      }
+
       setSubmitted(true);
     } catch (err) {
       console.error("Gagal simpan:", err);
@@ -79,14 +88,14 @@ export default function LeadMagnetForm() {
                 Discord 💬
               </p>
 
-							<a
-          href="https://discord.gg/HGbCwWFkEk"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-white text-black font-semibold px-5 py-3 rounded-xl hover:bg-gray-200 transition mt-4"
-        >
-          🚀 Join Komunitas Discord
-        </a>
+              <a
+                href="https://discord.gg/HGbCwWFkEk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-black font-semibold px-5 py-3 rounded-xl hover:bg-gray-200 transition mt-4"
+              >
+                🚀 Join Komunitas Discord
+              </a>
             </div>
           ) : (
             <>
@@ -103,8 +112,7 @@ export default function LeadMagnetForm() {
                 <p className="mb-1 font-semibold text-white">Syarat Minimal:</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>
-                    Akun FB aktif dengan minimal{" "}
-                    <strong>100 teman</strong>
+                    Akun FB aktif dengan minimal <strong>100 teman</strong>
                   </li>
                   <li>
                     Akun sudah berumur lebih dari <strong>6 bulan</strong>

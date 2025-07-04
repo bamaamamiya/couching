@@ -47,14 +47,15 @@ const OfferBreakdown = () => {
             </div>
 
             <div className="mt-6 text-gray-400 text-sm sm:text-base">
-              Harga Spesial Hari Ini
+              Harga Sekarang
             </div>
             <div className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Rp400.000
+              Rp500.000
             </div>
 
             <p className="mt-4 text-sm text-gray-500">
-              Harga akan naik 20% bulan depan. Tersisa <span className="text-white font-semibold">3 slot</span> lagi.
+              Harga akan naik jadi Rp600.000 bulan depan.{" "}
+              <span className="text-white font-semibold">3 slot</span> lagi.
             </p>
           </div>
         </div>
