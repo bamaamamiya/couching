@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { supabase } from "../libs/supabase";
+import { supabase } from "../libs/supabase-browser";
 
 export default function DashboardReviewer() {
   const router = useRouter();
@@ -49,30 +49,29 @@ export default function DashboardReviewer() {
   });
 
   useEffect(() => {
-  const fetchData = async () => {
-    const { data: sessionData } = await supabase.auth.getSession();
+    const fetchData = async () => {
+      const { data: sessionData } = await supabase.auth.getSession();
 
-    if (!sessionData.session) {
-      console.warn("❌ No session found");
-      return;
-    }
+      if (!sessionData.session) {
+        console.warn("❌ No session found");
+        return;
+      }
 
-    const { data, error } = await supabase
-      .from("leadmagnet")
-      .select("*")
-      .order("id", { ascending: false });
+      const { data, error } = await supabase
+        .from("leadmagnet")
+        .select("*")
+        .order("id", { ascending: false });
 
-    if (error) {
-      console.error("Error fetching leads:", error);
-    } else {
-      console.log("Fetched leads:", data);
-      setLeads(data);
-    }
-  };
+      if (error) {
+        console.error("Error fetching leads:", error);
+      } else {
+        console.log("Fetched leads:", data);
+        setLeads(data);
+      }
+    };
 
-  fetchData();
-}, []);
-
+    fetchData();
+  }, []);
 
   const updateStatus = async (id, status) => {
     const { error } = await supabase

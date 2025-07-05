@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { auth } from "../libs/firebase";
 import { signOut as firebaseSignOut } from "firebase/auth";
-import { supabase } from "../libs/supabase"; // pakai createBrowserSupabaseClient()
+import { supabase } from "../libs/supabase-browser"; // pakai createBrowserSupabaseClient()
 
 const BrandBar = () => {
   const [username, setUsername] = useState("");

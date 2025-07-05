@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "../libs/supabase";
+import { supabase } from "../libs/supabase-browser";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function AdminLoginPage() {
       } = await supabase.auth.getSession();
 
       if (session?.user) {
-			router.replace("/select");
+        router.replace("/select");
       }
     };
     checkSession();
@@ -42,7 +42,7 @@ export default function AdminLoginPage() {
     } else if (data?.session) {
       console.log("Login berhasil ✅", data.session);
       console.log("Redirecting ke /select");
-			router.replace("/select");
+      router.replace("/select");
       console.log("router.push selesai");
     } else {
       alert("Login tidak berhasil. Cek kembali email & password.");

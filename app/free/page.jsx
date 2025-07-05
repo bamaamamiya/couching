@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import FadeUpWhenVisible from "../components/FadeUpWhenVisible";
-import { supabase } from "../libs/supabase";
+import { supabase } from "../libs/supabase-browser";
 
 export default function LeadMagnetForm() {
   const [form, setForm] = useState({

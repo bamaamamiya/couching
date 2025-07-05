@@ -1,19 +1,23 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
+
+import Footer from "./components/Footer";
 import BrandBar from "./components/BrandBar";
+
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
 export const metadata = {
   title: "Lucrum Launch",
   description: "1-1 Program Dropship",
 };
 
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   const supabase = createServerComponentClient({ cookies });
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
   return (
     <html lang="en">
@@ -29,9 +33,8 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <BrandBar />
+        <BrandBar session={session} />
         {children}
-
         <Footer />
       </body>
     </html>
