@@ -212,6 +212,12 @@ export default function DashboardReviewer() {
                     Tolak
                   </button>
                   <button
+                    onClick={() => updateStatus(lead.id, "pending")}
+                    className="bg-yellow-400 text-black px-2 py-1 rounded text-xs hover:opacity-80"
+                  >
+                    Pending
+                  </button>
+                  <button
                     onClick={() => deleteLead(lead.id)}
                     className="bg-red-700 text-white px-2 py-1 rounded text-xs hover:opacity-80"
                   >
@@ -268,7 +274,7 @@ export default function DashboardReviewer() {
                 </span>
               </p>
             </div>
-            <div className="mt-6 flex justify-end gap-2">
+            <div className="mt-6 flex justify-end gap-2 flex-wrap">
               <button
                 onClick={() => {
                   updateStatus(selectedLead.id, "selected");
@@ -286,6 +292,15 @@ export default function DashboardReviewer() {
                 className="bg-yellow-400 hover:bg-yellow-300 text-black px-4 py-2 rounded text-sm font-semibold"
               >
                 ❌ Tolak
+              </button>
+              <button
+                onClick={() => {
+                  updateStatus(selectedLead.id, "pending");
+                  closeModal();
+                }}
+                className="bg-white hover:bg-gray-200 text-black px-4 py-2 rounded text-sm font-semibold"
+              >
+                🔄 Pending
               </button>
               <button
                 onClick={() => {
