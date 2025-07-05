@@ -1,5 +1,4 @@
 // supabase.js
-'use client'
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
 
 // import { createClient } from "@supabase/supabase-js";
