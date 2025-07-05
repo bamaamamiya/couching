@@ -5,20 +5,12 @@ const inter = Inter({ subsets: ["latin"] });
 import Footer from "./components/Footer";
 import BrandBar from "./components/BrandBar";
 
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
-import { cookies } from "next/headers";
-
 export const metadata = {
   title: "Lucrum Launch",
   description: "1-1 Program Dropship",
 };
 
 export default async function RootLayout({ children }) {
-  const supabase = createServerComponentClient({ cookies });
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
-
   return (
     <html lang="en">
       <head>
@@ -33,7 +25,7 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <BrandBar session={session} />
+        <BrandBar />
         {children}
         <Footer />
       </body>
