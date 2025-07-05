@@ -4,53 +4,54 @@ import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+
 import { auth } from "../libs/firebase";
 import { signOut as firebaseSignOut } from "firebase/auth";
 import { supabase } from "../libs/supabase-browser"; // pakai createBrowserSupabaseClient()
 
 const BrandBar = () => {
-  const [username, setUsername] = useState("");
-  const [provider, setProvider] = useState(""); // 'firebase' | 'supabase'
+  const [userInfo, setUserInfo] = useState({ name: "", provider: "" });
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null);
   const router = useRouter();
 
+  // Cek login dari Firebase atau Supabase
   useEffect(() => {
-    // Firebase check
-    const unsubscribeFirebase = auth.onAuthStateChanged((user) => {
-      if (user) {
-        const name = user.displayName || user.email?.split("@")[0];
-        setUsername(name);
-        setProvider("firebase");
-      }
-    });
+    const checkAuth = async () => {
+      // 1. Cek Firebase dulu
+      const unsub = auth.onAuthStateChanged((user) => {
+        if (user) {
+          const name = user.displayName || user.email?.split("@")[0];
+          setUserInfo({ name, provider: "firebase" });
+        }
+      });
 
-    // Supabase check
-    const checkSupabase = async () => {
+      // 2. Cek Supabase
       const { data } = await supabase.auth.getSession();
       const user = data.session?.user;
-      if (user) {
+      if (user && !userInfo.name) {
         const name = user.email?.split("@")[0];
-        setUsername(name);
-        setProvider("supabase");
+        setUserInfo({ name, provider: "supabase" });
       }
+
+      return () => unsub();
     };
 
-    checkSupabase();
-
-    return () => unsubscribeFirebase();
+    checkAuth();
   }, []);
 
   const handleLogout = async () => {
-    if (provider === "firebase") {
+    if (userInfo.provider === "firebase") {
       await firebaseSignOut(auth);
-    } else if (provider === "supabase") {
+    } else if (userInfo.provider === "supabase") {
       await supabase.auth.signOut();
     }
-    setUsername("");
+
+    setUserInfo({ name: "", provider: "" });
     router.push("/");
   };
 
+  // Click luar tutup menu
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -64,6 +65,7 @@ const BrandBar = () => {
   return (
     <header className="bg-black text-white py-3 border-b border-zinc-800 shadow-sm">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        {/* Kiri: Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/lucrum.png"
@@ -78,13 +80,14 @@ const BrandBar = () => {
           </div>
         </Link>
 
-        {username ? (
+        {/* Kanan: Username atau CTA */}
+        {userInfo.name ? (
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setShowMenu(!showMenu)}
               className="text-sm sm:text-base text-gray-300 hover:text-white transition"
             >
-              Hi, {username} ▼
+              Hi, {userInfo.name} ▼
             </button>
 
             {showMenu && (

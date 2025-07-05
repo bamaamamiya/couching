@@ -4,6 +4,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 import Footer from "./components/Footer";
 import BrandBar from "./components/BrandBar";
+import SupabaseProvider from "./providers/SupabaseProvider";
 
 export const metadata = {
   title: "Lucrum Launch",
@@ -25,9 +26,11 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className={inter.className}>
-        <BrandBar />
-        {children}
-        <Footer />
+        <SupabaseProvider>
+          <BrandBar />
+          {children}
+          <Footer />
+        </SupabaseProvider>
       </body>
     </html>
   );
