@@ -6,9 +6,9 @@ import FadeUpWhenVisible from "./FadeUpWhenVisible";
 const OfferBreakdown = () => {
   const benefits = [
     { title: "1-on-1 coaching", value: "Rp5.000.000" },
-    { title: "SOP riset produk", value: "Rp1.000.000" },
+    { title: "Mindset riset produk", value: "Rp1.000.000" },
     { title: "Mindset video winning ads", value: "Rp1.500.000" },
-    { title: "Copy Ads Prompt FB", value: "Rp2.000.000" },
+    { title: "SOP Fullfilment", value: "Rp2.000.000" },
     { title: "Akses grup coaching selamanya", value: "Rp3.000.000" },
     { title: "Garansi coaching sampai pecah telur", value: "Tak ternilai" },
   ];

@@ -101,14 +101,16 @@ const BrandBar = () => {
               </div>
             )}
           </div>
-        ) : (
-          <Link
-            href="/free"
-            className="inline-block bg-white text-black px-5 py-2 rounded-full font-medium text-sm sm:text-base hover:bg-gray-100 transition-all duration-200"
-          >
-            Coaching Gratis
-          </Link>
-        )}
+        ) : null
+				// (
+        //   <Link
+        //     href="/moduls"
+        //     className="inline-block bg-white text-black px-6 py-2.5 rounded-xl font-semibold text-sm sm:text-base shadow hover:shadow-md transition-all hover:scale-[1.03] hover:bg-zinc-100"
+        //   >
+        //     📚 Akses Modul
+        //   </Link>
+        // )
+				}
       </div>
     </header>
   );

@@ -35,7 +35,7 @@ const LoginPage = () => {
       <div className="text-center space-y-8 max-w-md w-full">
         <h1 className="text-4xl font-bold">Masuk ke Lucrum Launch</h1>
         <p className="text-gray-400">
-          Akses semua modul edukasi keuangan eksklusif 📚
+          Akses modul edukasi dropship eksklusif 📚
         </p>
 
         <button

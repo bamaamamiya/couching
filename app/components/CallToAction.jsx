@@ -2,15 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { db } from "../libs/firebase";
-import {
-  collection,
-  addDoc,
-  serverTimestamp,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
+import { supabase } from "../libs/supabase-browser";
 
 import FadeUpWhenVisible from "./FadeUpWhenVisible";
 
@@ -19,6 +11,9 @@ const FinalCTA = () => {
   const [wa, setWa] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [umur, setUmur] = useState("");
+  const [paket, setPaket] = useState("pecah-telur");
+
   const router = useRouter();
 
   const validateWA = (wa) => {
@@ -38,43 +33,23 @@ const FinalCTA = () => {
       return alert("Nomor WA tidak valid. Awali dengan +62, 62, atau 08");
     if (!validateEmail(email)) return alert("Format email tidak valid");
 
-    // 🔁 Format WA: 08 / +62 jadi 62
     let formattedWA = wa.replace(/\s+/g, "").replace(/^(\+62|0)/, "62");
-
-    // 1. Cek berapa yang sudah mendaftar bulan ini
-    const now = new Date();
-    const awalBulan = new Date(now.getFullYear(), now.getMonth(), 1);
-
-    const q = query(
-      collection(db, "leads"),
-      where("createdAt", ">=", awalBulan)
-    );
-    const snapshot = await getDocs(q);
-
-    if (snapshot.size >= 3) {
-      alert("Slot bulan ini sudah penuh. Kamu masuk waiting list ya.");
-
-      await addDoc(collection(db, "waitinglist"), {
-        nama,
-        wa: formattedWA,
-        email,
-        createdAt: serverTimestamp(),
-      });
-
-      router.push("/waiting-list"); // arahkan ke halaman khusus waiting
-      return;
-    }
 
     setLoading(true);
     try {
-      await addDoc(collection(db, "leads"), {
-        nama,
-        wa: formattedWA,
-        email,
-        createdAt: serverTimestamp(),
-      });
+      const { error } = await supabase.from("leadmagnet").insert([
+        {
+          nama: nama,
+          wa: formattedWA,
+          email: email,
+          umur: umur,
+          paket: paket,
+        },
+      ]);
 
-      router.push(`/pilih-paket?nama=${nama}&wa=${formattedWA}`);
+      if (error) throw error;
+
+      router.push("/waiting"); // arahkan ke halaman waiting list
     } catch (err) {
       console.error("Gagal simpan:", err);
       alert("Gagal daftar. Coba lagi.");
@@ -96,9 +71,10 @@ const FinalCTA = () => {
               Siap Pecah Telur Pertamamu?
             </h2>
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
-              🚨 Sisa 3 slot lagi. Harga akan naik jadi Rp600.000 bulan depan.
+              🚨 Batch selanjutnya akan dibuka terbatas.
               <br className="hidden sm:block" />
-              Ambil slotmu sekarang — sebelum semua batch penuh.
+              Isi form sekarang untuk amankan tempatmu di komunitas Discord
+              sebelum kuota penuh.
             </p>
           </div>
 
@@ -107,6 +83,7 @@ const FinalCTA = () => {
             onSubmit={handleSubmit}
             className="bg-zinc-900 border border-zinc-700 rounded-2xl px-6 py-10 space-y-5 w-full sm:w-4/5 md:w-[480px] lg:w-[500px] mx-auto"
           >
+            {/* Nama */}
             <input
               type="text"
               placeholder="Nama Lengkap"
@@ -114,6 +91,8 @@ const FinalCTA = () => {
               value={nama}
               onChange={(e) => setNama(e.target.value)}
             />
+
+            {/* WA */}
             <input
               type="text"
               placeholder="Nomor WhatsApp"
@@ -121,6 +100,8 @@ const FinalCTA = () => {
               value={wa}
               onChange={(e) => setWa(e.target.value)}
             />
+
+            {/* Email */}
             <input
               type="email"
               placeholder="Alamat Email Aktif"
@@ -129,6 +110,49 @@ const FinalCTA = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
 
+            {/* Umur */}
+            <input
+              type="number"
+              placeholder="Berapa Usia Kamu?"
+              className="w-full p-3 rounded-xl bg-zinc-800 text-white placeholder-gray-400 border border-zinc-700 focus:ring-2 focus:ring-white/80 outline-none text-sm sm:text-base"
+              value={umur}
+              onChange={(e) => setUmur(e.target.value)}
+              min="15"
+              max="35"
+            />
+
+            {/* Pilihan Paket */}
+            <div className="text-left text-sm sm:text-base text-white space-y-2">
+              <p className="font-medium">Pilih Jalur Belajar</p>
+              <div className="flex flex-col gap-2">
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="pecah-telur"
+                    checked={paket === "pecah-telur"}
+                    onChange={(e) => setPaket(e.target.value)}
+                  />
+                  <span className="text-gray-300">
+                    ✍ Pemula: Fokus Pecah Telur
+                  </span>
+                </label>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="naik-omset"
+                    checked={paket === "naik-omset"}
+                    onChange={(e) => setPaket(e.target.value)}
+                  />
+                  <span className="text-gray-300">
+                    🔥 Naik Omset: Pecah Telur → Scale
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            {/* Tombol Submit */}
             <button
               type="submit"
               disabled={loading}

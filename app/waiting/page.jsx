@@ -46,7 +46,7 @@ export default function Waiting({ totalWaiting = 17 }) {
           rel="noopener noreferrer"
           className="inline-block bg-white text-black font-semibold px-5 py-3 rounded-xl hover:bg-gray-200 transition mt-4"
         >
-          🚀 Join Komunitas Discord
+          🚀 Join Komunitas Discord 
         </a>
       </div>
     </section>
