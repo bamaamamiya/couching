@@ -11,7 +11,7 @@ export default function TrustedBy() {
           <span className="text-2xl font-bold opacity-80 hover:opacity-100 transition">Santai Goods</span>
           <span className="text-lg font-medium opacity-80 hover:opacity-100 transition">Raw Denim ID</span>
           <span className="text-xl font-semibold opacity-80 hover:opacity-100 transition">PesenAja</span>
-          <span className="text-2xl font-bold opacity-80 hover:opacity-100 transition">Warung 99</span>
+          <span className="text-2xl font-bold opacity-80 hover:opacity-100 transition">Hyang Labs</span>
           <span className="text-lg font-medium opacity-80 hover:opacity-100 transition">Batik Urban</span>
           <span className="text-xl font-semibold opacity-80 hover:opacity-100 transition">Rasa Nusantara</span>
           <span className="text-2xl font-bold opacity-80 hover:opacity-100 transition">Seduh Studio</span>

@@ -17,6 +17,13 @@ const questions = [
     placeholder: "@nama_brand",
   },
   {
+    id: "business_name",
+    label:
+      "Masukin nama bisnis kamu biar tim kami bisa lihat profil kamu.",
+    type: "text",
+    placeholder: "Nama Bisnis",
+  },
+  {
     id: "whatsapp",
     label:
       "Nomor WhatsApp aktif kamu biar tim bisa follow up hasil review-nya.",
@@ -120,32 +127,50 @@ export default function ApplyForm() {
   };
 
   const nextStep = async () => {
-    const currentValue = formData[questions[step].id];
+    const currentQuestion = questions[step];
+    const currentValue = formData[currentQuestion.id];
+
+    // ✅ Validasi input kosong
     if (!currentValue || currentValue.trim() === "") {
       setShowPopup(true);
       return;
     }
 
+    // ✅ Jika belum step terakhir, lanjut
     if (step < questions.length - 1) {
       setStep(step + 1);
-    } else {
-      setLoading(true);
-      const payload = {
-        instagram_handle: formData.instagram,
-        whatsapp_number: cleanWhatsapp(formData.whatsapp),
-        product_description: formData.product,
-        business_category: formData.audience,
-        ad_experience: formData.experience,
-        average_monthly_revenue: formData.budget,
-        goal: formData.goal,
-        business_name: null,
-        created_at: new Date().toISOString(),
-      };
-      const { error } = await supabase.from("agency").insert([payload]);
-      setLoading(false);
-      if (!error) setSubmitted(true);
-      else setShowPopup(true);
+      return;
     }
+
+    // ✅ Step terakhir: kirim data ke Supabase
+    setLoading(true);
+    const payload = {
+      instagram_handle: formData.instagram,
+      whatsapp_number: cleanWhatsapp(formData.whatsapp),
+      product_description: formData.product,
+      business_category: formData.audience,
+      business_age: formData["usia perusahaan"],
+      ad_experience: formData.experience,
+      monthly_revenue: formData.omset,
+      employee_count: formData.karyawan,
+      ad_budget: formData.budget,
+      goal: formData.goal,
+      main_problem: formData.problem,
+      business_name: null,
+      created_at: new Date().toISOString(),
+    };
+
+    const { error } = await supabase.from("agency").insert([payload]);
+    setLoading(false);
+
+    if (error) {
+      console.error("❌ Gagal kirim ke Supabase:", error.message);
+      alert("Terjadi kesalahan saat mengirim data. Coba lagi nanti.");
+      return;
+    }
+
+    // ✅ Kalau sukses
+    setSubmitted(true);
   };
 
   const prevStep = () => setStep(step - 1);
