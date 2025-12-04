@@ -67,7 +67,7 @@ export default function Results({
           </div>
         </div>
         <div className="mt-16">
-          <h1 className="text-2xl font-semibold mb-6">Siap untuk memulai?</h1>
+          <h1 className="text-2xl font-semibold mb-6">Ready to get started?</h1>
           <Link
             href="/apply"
             className="inline-block bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-transparent hover:text-white border border-white transition-all"

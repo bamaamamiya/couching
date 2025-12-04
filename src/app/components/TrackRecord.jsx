@@ -5,38 +5,47 @@ export default function TrackRecord() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Header */}
         <p className="text-white font-semibold mb-2 tracking-wide uppercase">
-          Rekam Jejak Kami
+          Our Track Record
         </p>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Dipercaya oleh ratusan brand & UMKM di seluruh Indonesia
+          Trusted by brands worldwide
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">
-          Kami telah membantu berbagai bisnis lokal mencapai target mereka —
-          menghasilkan omzet miliaran rupiah melalui strategi digital yang terukur
-          dan efisien.
+          We’ve helped businesses around the world hit their growth targets
+          through data-driven digital strategies that deliver consistent and
+          measurable results.
         </p>
 
-        {/* Statistik utama */}
+        {/* Main Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold text-white">Rp7,5JT+</h3>
-            <p className="text-gray-400 text-sm mt-2">Omzet yang dihasilkan untuk klien</p>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">
+              $500K+
+            </h3>
+            <p className="text-gray-400 text-sm mt-2">
+              Revenue generated for clients
+            </p>
           </div>
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold text-white">2.000+</h3>
-            <p className="text-gray-400 text-sm mt-2">Kampanye iklan dikelola</p>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">
+              2,000+
+            </h3>
+            <p className="text-gray-400 text-sm mt-2">Ad campaigns managed</p>
           </div>
           <div>
             <h3 className="text-3xl md:text-4xl font-bold text-white">100+</h3>
-            <p className="text-gray-400 text-sm mt-2">Brand & UMKM bermitra</p>
+            <p className="text-gray-400 text-sm mt-2">
+              Global brands partnered with us
+            </p>
           </div>
           <div>
             <h3 className="text-3xl md:text-4xl font-bold text-white">5x+</h3>
-            <p className="text-gray-400 text-sm mt-2">Rata-rata ROAS untuk kampanye klien</p>
+            <p className="text-gray-400 text-sm mt-2">
+              Average ROAS across campaigns
+            </p>
           </div>
         </div>
-
       </div>
     </section>
-  )
+  );
 }

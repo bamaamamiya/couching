@@ -13,21 +13,22 @@ export default function Home() {
       <TrustedBy />
       <Services />
       <Results
-        sectionTitle="Hasil Nyata"
-        mainTitle="Buktikan dengan data, bukan janji"
-        description="Kami bantu UMKM lokal mencapai hasil nyata lewat strategi iklan Facebook & Instagram yang terbukti meningkatkan penjualan."
-        highlightTitle="Naik omzet Rp38 juta dalam 30 hari 🎯"
+        sectionTitle="Real Results"
+        mainTitle="Proven by data, not promises"
+        description="We help small and growing businesses achieve measurable results with Facebook & Instagram ad strategies designed to increase sales."
+        highlightTitle="Increased revenue by $2,400 in 30 days 🎯"
         highlightImage="/images/ads2.png"
-        bottomlightTitle="Mempertahankan ROAS sebesar 4,69x hanya dalam satu bulan"
+        bottomlightTitle="Maintained a 4.69x ROAS in just one month"
         bottomlightImage="/images/ads3.png"
-        subTitle="Konsisten tiap bulan, tanpa bakar uang iklan"
+        subTitle="Consistent results every month—without burning ad spend"
         results={[
-          { src: "/images/sep.png", alt: "Penjualan bulan September" },
-          { src: "/images/oct.png", alt: "Penjualan bulan Oktober" },
+          { src: "/images/sep.png", alt: "Sales in September" },
+          { src: "/images/oct.png", alt: "Sales in October" },
         ]}
       />
-			<TrackRecord/>
-			<EmpowerSection/>
+
+      <TrackRecord />
+      <EmpowerSection />
     </main>
   );
 }

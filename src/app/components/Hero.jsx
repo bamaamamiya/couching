@@ -18,13 +18,14 @@ export default function Hero() {
       {/* TEXT SIDE */}
       <div className="md:w-1/2 space-y-6 relative z-10">
         <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-          Bantu brand lokal tumbuh lebih cepat dengan{" "}
-          <span className="text-gray-400">strategi marketing berbasis data</span>
+          Helping local brands grow faster with{" "}
+          <span className="text-gray-400">data-driven marketing strategies</span>
         </h1>
 
         <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-          Kami membantu bisnis lokal tumbuh melalui strategi iklan Facebook dan Instagram
-          yang terukur, berfokus pada hasil nyata dan pertumbuhan berkelanjutan.
+          We help local businesses scale through measurable Facebook and
+          Instagram advertising strategies focused on real results and
+          sustainable growth.
         </p>
 
         <Link
@@ -39,7 +40,7 @@ export default function Hero() {
       <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center relative z-10">
         <Image
           src="/images/ads.png"
-          alt="Tampilan hasil iklan Facebook Ads"
+          alt="Facebook Ads results preview"
           width={600}
           height={400}
           className="rounded-lg shadow-lg border border-gray-800"

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram } from "react-icons/fa"; // pastikan install react-icons: npm i react-icons
+import { FaInstagram } from "react-icons/fa";
 import Footer from "./Footer";
 
 export default function EmpowerSection() {
@@ -17,20 +17,20 @@ export default function EmpowerSection() {
           }}
         ></div>
 
-        {/* BLOOM GRADIENT (BIRU LEMBUT) */}
+        {/* BLOOM GRADIENT */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-900 via-blue-800 to-sky-600 opacity-40 mix-blend-soft-light blur-3xl"></div>
 
         {/* CONTENT */}
         <div className="relative z-10 max-w-3xl space-y-6 text-white">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Bantu Brand Lokal Tumbuh Lebih Cepat
+            Helping Brands Grow Faster
           </h2>
 
           <p className="text-gray-300 text-lg leading-relaxed">
-            Maksimalkan potensi brand Anda dengan strategi marketing berbasis
-            data. Dari analisis hingga optimasi iklan Facebook & Instagram, kami
-            fokus bantu brand Anda naikkan konversi dan pertumbuhan
-            berkelanjutan.
+            Maximize your brand’s potential with data-driven marketing
+            strategies. From analysis to Facebook & Instagram ad optimization,
+            we focus on improving conversions and driving long-term, sustainable
+            growth.
           </p>
 
           <div className="flex items-center justify-center gap-4">
@@ -38,13 +38,13 @@ export default function EmpowerSection() {
               href="/apply"
               className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-transparent hover:text-white border border-white transition-all"
             >
-              Daftar Sekarang
+              Apply Now
             </Link>
             <Link
               href="/about"
               className="text-white underline hover:text-gray-300 transition-all"
             >
-              Pelajari Lebih Lanjut →
+              Learn More →
             </Link>
           </div>
         </div>
