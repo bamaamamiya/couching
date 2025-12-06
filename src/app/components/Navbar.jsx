@@ -16,7 +16,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center space-x-3 select-none">
           <Image
             src="/lucrum.png"
-            alt="Lucrum Launch Logo"
+            alt="lucratus Logo"
             width={40}
             height={40}
             className="rounded-full"

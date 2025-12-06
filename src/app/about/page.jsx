@@ -25,11 +25,11 @@ export default function AboutBamadiaPage() {
       {/* ABOUT SECTION */}
       <section className="relative z-10 min-h-[90vh] flex flex-col items-center justify-center max-w-7xl mx-auto px-6 pt-32 space-y-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold">
-          About <span className="text-gray-400">Lucrum Launch</span>
+          About <span className="text-gray-400">Lucratus Agency</span>
         </h1>
 
         <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
-          Lucrum Launch exists to help local brands grow in the digital era with
+          Lucratus Agency exists to help local brands grow in the digital era with
           <strong> data-driven and result-focused strategies</strong>. We
           specialize in <strong>Facebook & Instagram Ads</strong> to reach the
           right audience, and <strong>WhatsApp Marketing</strong> to boost
@@ -38,7 +38,7 @@ export default function AboutBamadiaPage() {
 
         <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
           By combining <strong>creativity, data analysis, and automation</strong>,
-          Lucrum Launch helps your brand scale efficiently without wasting ad
+          Lucratus Agency helps your brand scale efficiently without wasting ad
           spend. We're committed to being a <strong>trusted growth partner</strong>
           on your journey toward long-term success.
         </p>
