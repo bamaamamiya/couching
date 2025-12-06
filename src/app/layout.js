@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Lucratus Launch",
+  title: "Lucratus Agency",
   description: "Facebook & Instagram Ads Agency",
 };
 
