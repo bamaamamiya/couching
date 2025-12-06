@@ -24,7 +24,7 @@ export default function Navbar() {
           <span
             className={`${montserrat.className} text-2xl font-bold text-white tracking-tight`}
           >
-            Lucrum <span className="text-gray-400">Launch</span>
+            Lucratus <span className="text-gray-400">Agency</span>
           </span>
         </Link>
 
